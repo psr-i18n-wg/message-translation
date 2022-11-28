@@ -120,11 +120,11 @@ class GettextEmulator
 
     public static function textdomain($text_domain = null)
     {
-        if ($text_domain === null) {
-            return self::$defaultDomain;
+        if ($text_domain !== null) {
+            self::$defaultDomain = $text_domain;
         }
 
-        self::$defaultDomain = $text_domain;
+        return self::$defaultDomain;
     }
 
     public static function gettext($message)
